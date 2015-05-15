@@ -148,3 +148,7 @@ span.cpp, span.cc {
 span.eleven {
     font-size: 85%;
 }
+
+span#note:target {
+    background-color: yellow;
+}
