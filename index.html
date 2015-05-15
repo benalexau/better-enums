@@ -53,7 +53,7 @@
 
 <header>
   <h1>Better Enums</h1>
-  <h2 class="tagline">Clean reflective enums for
+  <h2 class="tagline">Clean compile-time reflective enums for
     <span class="cpp">C++</span><span class="eleven">11</span></h2>
 </header>
 
@@ -77,7 +77,15 @@
 ENUM(Channel, int, Red, Green, Blue);</pre>
 
     <p>
-      Better Enums is easy to maintain. There is no duplication of value names,
+      This gives you an <code>int</code>-sized enum type with all sorts of
+      reflective capacity, including string conversions, value listing,
+      compile-time operations, static information about the range of declared
+      constants, and (last and probably least) the name <code>"Channel"</code>
+      itself.
+    </p>
+
+    <p>
+      The enum is easy to maintain. There is no duplication of value names,
       no repetition of cumbersome macros, and no generator to run on every
       build. The library is header-only, so there aren't any object files to
       link with.
