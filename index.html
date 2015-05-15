@@ -42,6 +42,7 @@
       Download
     </a>
     <a href="https://github.com/aantron/better-enums">GitHub</a>
+    <a href="#tutorial">Tutorial</a>
     <a href="https://github.com/aantron/better-enums/tree/master/example">
       Samples
     </a>
@@ -54,10 +55,43 @@
   <h1>Better Enums</h1>
   <h2 class="tagline">Clean reflective enums for
     <span class="cpp">C++</span><span class="eleven">11</span></h2>
-  <h2 class="version">0.8.0</h2>
 </header>
 
 <main>
+  <section>
+    <p>
+      Have you noticed the awkward situation with enums in
+      <span class="cpp">C++</span>? Built-in <code>enum class</code> is missing
+      basic features, such as string conversion. There are several approaches to
+      address this, but most seem to involve unnatural syntax or code
+      repetition. See some <a href="http://stackoverflow.com/questions/201593/is-there-a-simple-script-to-convert-c-enum-to-string">here</a>.
+    </p>
+
+    <p>
+      Better Enums gives you rich, reflective enums with the nicest syntax yet
+      seen. All you have to do is add two short, simple header files to your
+      project, and you are ready to go.
+    </p>
+
+    <pre>#include &lt;enum.h&gt;
+ENUM(Channel, int, Red, Green, Blue);</pre>
+
+    <p>
+      Better Enums is easy to maintain. There is no duplication of value names,
+      no repetition of cumbersome macros, and no generator to run on every
+      build. The library is header-only, so there aren't any object files to
+      link with.
+    </p>
+
+    <p>
+      Better Enums is free, available under the BSD license. The
+      author is committed to further development and support, so please
+      <a href="mailto:antonbachin@yahoo.com">contact me</a>, open an issue on
+      <a href="https://github.com/aantron/better-enums">GitHub</a>, or ask a
+      question on Stack Overflow.
+    </p>
+  </section>
+
   <section>
     <h2>Installation</h2>
 
@@ -71,10 +105,17 @@
       <span class="cc">clang</span> in
       <span class="cpp">C++</span><span class="eleven">11</span> mode.
     </p>
+
+    <p>
+      <span class="cc">msvc</span> support is coming in a near-future version
+      with some enum features disabled. This is because
+      <span class="cc">msvc</span>'s support for <code>constexpr</code> is
+      lagging.
+    </p>
   </section>
 
   <section>
-    <h2>Tutorial</h2>
+    <h2 id="tutorial">Tutorial</h2>
 
     <p>
       Create a file and put this code in it:
@@ -174,7 +215,10 @@ Channel   my_channel = Channel::_from_integral(2);</pre>
       Finally, most of the above is declared <code>constexpr</code> and can be
       run at compile time. This means you can do all sorts of parsing and
       processing at the same time the rest of your code is being compiled,
-      improving runtime and startup performance!
+      improving runtime and startup performance! See some
+      <a href="https://github.com/aantron/better-enums/blob/master/example/4-constexpr.cc">examples</a>
+      and another
+      <a href="https://github.com/aantron/better-enums/blob/master/example/6-traits.cc">example</a>.
     </p>
   </section>
 
@@ -189,7 +233,7 @@ Channel   my_channel = Channel::_from_integral(2);</pre>
           samples</a>, including advanced usage</li>
       <li>Read the <a href="api.html">API documentation</a></li>
       <li style="display: none;">See results of <a href="performance.html">performance testing</a></li>
-      <li>View and contribute on
+      <li>View, discuss, and contribute on
         <a href="https://github.com/aantron/better-enums">GitHub</a></li>
       <li>
         <a href="mailto:antonbachin@yahoo.com">Contact the author</a> directly
@@ -203,6 +247,8 @@ Channel   my_channel = Channel::_from_integral(2);</pre>
   Copyright &copy; 2015 Anton Bachin. Released under the BSD 2-clause license.
   See <a href="https://github.com/aantron/better-enums/blob/master/LICENSE">
   LICENSE</a>.
+  <br />
+  This page id part of the documentation for Better Enums 0.8.0.
 </footer>
 
 </body>
